@@ -20,9 +20,7 @@ const {
   updateOneComment,
   deleteOneComment,
 } = require('../controllers/comment.controller')
-// fastify.register(require('fastify-express'))
 const {register,login} = require("../controllers/auth.controller")
-// const { default: fastifyStatic } = require('fastify-static')
 const nam = require('../middleware/ran')
 const authenticate = require('../middleware/auth')
 //RED
@@ -31,7 +29,8 @@ const authenticate = require('../middleware/auth')
 module.exports = fp(function productRoutes(fastify, options, done) {
 
   fastify.get('/', (req, reply) => {console.log(req.user);
-      reply.view('/src/view/index.ejs', { text: 'texdat' })})
+      reply.view('/src/view/index.ejs', { text: 'texdat',req:req })})
+
   fastify.get('/catologue',{preHandler:[nam]},getProdz)
   fastify.get('/prod',getProducts)
   // fastify.get('/pr/:id', getProducts)
