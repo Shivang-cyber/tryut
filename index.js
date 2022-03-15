@@ -58,6 +58,8 @@ fastify.get('/login',   {preValidation: fastifyPassport.authenticate('google',{s
 fastify.get('/logout',
     async(req,res) => {
         req.logout()
+  res.redirect('/')
+
         return {success:true}
     }
 )
