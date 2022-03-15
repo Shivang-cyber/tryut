@@ -33,10 +33,7 @@
       <div id="al" class="img_sl_in"></div>
       <div id="bla" class="img_sl_in_rep"><div id="cla" class="arr"></div></div>
     </section>
-    <section>
-      <%if(req!=null)%>
-      <%{ <div><%=req.user.displayName%></div> }%>
-    </section>
+
   </body>
 </html>
 <style></style>
@@ -53,3 +50,7 @@
   document.getElementById('sec_ban_mains').innerHTML = banner()
 </script>
 <script type="text/javascript" src="/view/public/js/slider.js"></script>
+<script>
+  let fell = "<%=JSON.stringify(req)%>"
+  console.log(fell);
+</script>
