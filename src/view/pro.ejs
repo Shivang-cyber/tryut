@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+      rel="icon"
+      href="https://image.apktoy.com/img/e6/com.ril.ajio/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="view/public/styles/nav.css" />
+    <link rel="stylesheet" href="view/public/styles/pro.css"/>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <section id="nav">
+
+    </section>
+    <section id="det">
+        <div id="imgmain">
+            <div id="imgdis">
+            <div id="imgarr">
+              
+                </div>
+                <div id="imgban">
+                </div>
+                </div>            
+                <div id="imgbott"></div>
+        </div>
+
+        </div>
+        <div id="detes">
+          <h3><%=text.brand%></h3>
+          <h2><%=text.name  %> </h2>
+          <h1>₹ <%=text.price%></h1>
+          <div><h6>MRP ₹<%=+text.price+Math.floor(Math.random()*100)  %> </h6>(<%=Math.floor(Math.random()*100)  %>% OFF )<h6></h6></div>
+          <h6>Price inclusive of all taxes</h6>
+          <div class="advert"></div>
+
+        </div>
+    </section>
+
+</body>
+</html>
+<script type="module">
+    // navbar
+    import navbar from '/view/public/js/nav.js'
+    document.getElementById('nav').innerHTML = navbar()
+  </script>
+<script>
+var parsed_data = "<%=JSON.stringify(text) %>"
+let a = JSON.parse(parsed_data.split('&#34;').join('"'));
+let b = document.getElementById("imgban")
+let im =document.createElement('img')
+im.setAttribute("class","fade-in")
+
+let i = 0
+setInterval(function(){ 
+if(i==a.images.length)i=0
+im.src = a.images[i]
+b.appendChild(im)
+i++
+}, 3000);
+
+a.images.forEach(function(k){
+  let imgarr = document.createElement('img')
+  imgarr.src = k
+  imgarr.onclick = function(){
+    im.src = k
+  }
+  document.querySelector('#imgarr').appendChild(imgarr)
+
+})
+console.log(a);
+</script>

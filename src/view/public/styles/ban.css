@@ -1,0 +1,49 @@
+.ban_main_sec{
+ width: 100%;
+ margin: 0;
+}
+
+.ban_main_sec>div{
+ width: 100%;
+display: flex;
+overflow: hidden;
+margin: 0;
+}
+.zoom {
+  background-color: green;
+  transition: transform .6s;
+  margin:auto
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.02); /* IE 9 */
+  -webkit-transform: scale(1.02); /* Safari 3-8 */
+  transform: scale(1.02); 
+  z-index: 0;
+}
+.ban_main_sec>div>img{
+ width: 100%;
+}
+.ban_main_sec>div>div{
+width: 59.8%;
+ margin:0 1px 0 1px;
+
+overflow: hidden;
+}
+.ban_main_sec>div>div>img{
+ width: 100%;
+}
+.quad_side>div{
+ width: 24.96%;
+ margin: 1px;
+}
+.quad_side>div>img{
+ width: 100%;
+}
+.tri_side>div{
+ width: 32.95%;
+ margin:0 1px 0 1px;
+}
+.tri_side>div>img{
+ width: 100%;
+}
