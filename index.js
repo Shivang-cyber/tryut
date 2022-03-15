@@ -51,7 +51,7 @@ fastify.get('/auth/google/callback',
     }
 )
 
-fastify.get('/login', fastifyPassport.authenticate('google', {scope: ['email','profile']}), async (req,res) => {
+fastify.get('/login',   {preValidation: fastifyPassport.authenticate('google',{scope:['email','profile']})},async (req,res) => {
   res.redirect('/')
 })
 
