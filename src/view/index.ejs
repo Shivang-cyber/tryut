@@ -33,7 +33,9 @@
       <div id="al" class="img_sl_in"></div>
       <div id="bla" class="img_sl_in_rep"><div id="cla" class="arr"></div></div>
     </section>
-
+    <section>
+      <%=req?.user?.displayName%>
+    </section>
   </body>
 </html>
 <style></style>
@@ -52,5 +54,5 @@
 <script type="text/javascript" src="/view/public/js/slider.js"></script>
 <script>
   let fell = "<%=req%>"
-  console.log(fell.user.displayName);
+  // console.log(fell.user.displayName);
 </script>
